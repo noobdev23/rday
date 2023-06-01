@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Republic day</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap" rel="stylesheet">  
+        <style>
+        body {
+            background: linear-gradient(#f48f42, #ffffff, #00ff00);
+            background-size: 100vw 100vh;
+            position: relative;
+            }
+        #wish{
+            text-align: center;
+            width: 100%;
+            font-size: 5rem;
+            margin-top: 50px;
+            font-family: 'Gorditas', cursive;
+            color: #0984e3;
+        }
+        div.wheel img{
+            width: 210px;
+            display: block;
+            margin:auto;
+            margin-top: 120px;
+            animation: ashok-chakra 3s linear infinite;
+        }
+        @keyframes ashok-chakra {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            @media (max-width: 467px) {
+                body{
+                    background-color: red;
+                }
+                div.wheel img{
+                    position: absolute;
+                    top: 40%;
+
+                }
+            }
+            </style>
+    </head>
+    <body>
+        <div class="wheel">
+            <img src="./ashoka-chakra.png" alt="ashok chakra">
+        </div>
+        <div id="wish"></div>
+        
+    </body>
+    <script>
+            var str = "Happy Republic Day To Everyone ";
+            var i = 0;
+            var ele = document.getElementById("wish");
+            ele.innerHTML = "";
+            var rep = setInterval(()=>{
+                if(str.length > i)
+                { 
+                    ele.innerHTML += str.charAt(i++); 
+                 }  
+                 else{
+                clearInterval(rep);}
+            }, 100);
+            
+            </script>
+</html>
